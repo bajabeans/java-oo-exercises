@@ -15,6 +15,7 @@ public class Student {
 	private double tuition = 0;
 	private String classStanding;
 	private double qualityScore = 0;
+	private static Student z; 
 	
 	
 	public Student(String fName, String lName, int studentID)
@@ -92,7 +93,7 @@ public class Student {
 		return this.tuition;
 
 	}
-	
+	/*
 	public Student createLegacy(Student x, Student y)
 	{
 		String newFN = x.getName();
@@ -104,6 +105,22 @@ public class Student {
 		z.gpa = newGPA;
 		z.credits = Math.max(x.credits, y.credits);
 		return z;
+	}
+	*/
+	
+	public static Student createLegacy(Student x, Student y)
+	{
+		String newFN = x.getName();
+		String newLN = y.getName();
+		int newSID = x.studentID + y.studentID;
+		double newGPA = (x.gpa + y.gpa)/2;
+		
+		Student z = new Student(newFN, newLN, newSID);
+		z.gpa = newGPA;
+		z.credits = Math.max(x.credits, y.credits);
+		return z;
+		
+		
 	}
 	
 	public String toString()

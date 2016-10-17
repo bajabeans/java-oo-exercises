@@ -8,7 +8,8 @@ public class Computer {
 	//brand - string
 	
 	private int memory;
-	private double size;
+	//private but also able to inherit 
+	protected double size;
 	private double processor;
 	private String brand;
 	
