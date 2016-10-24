@@ -3,9 +3,9 @@ package javagram.filters;
 import javagram.Picture;
 import java.awt.Color;
 
-public class BlueFilter {
+public class BlueFilter implements Filter{
 
-	public Picture process(Picture original) {
+	public Picture getNewImage(Picture original) {
 		
 		Picture processed = new Picture(original.width(), original.height());
         
@@ -29,5 +29,11 @@ public class BlueFilter {
 		
 		return processed;
 	}
-
+/*
+	@Override
+	public Picture getProcessed() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+*/
 }

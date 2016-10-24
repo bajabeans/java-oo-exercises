@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Course {
 
@@ -95,7 +96,24 @@ public class Course {
 		return this.getName() + " " + this.credits;
 	}
 	
-	public static Course getAllCourses(){
+	@Override
+	public boolean equals(Object o)
+	{
+		//self check
+		if(this == o)
+			return true;
+		
+		//null check
+		if(o == null)
+			return false;
+		
+		//type check and cast
+		if(!(o instanceof Course))
+			return false;
+		
+		Course c = (Course) o;
+		
+		return Objects.equals(name, c.name) && Objects.equals(credits, c.credits)&& Objects.equals(seats, c.seats);
 		
 	}
 	public static void main(String[] args) {

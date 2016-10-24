@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Student {
 
@@ -120,6 +121,27 @@ public class Student {
 		z.credits = Math.max(x.credits, y.credits);
 		return z;
 		
+		
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		//self check
+		if(this == o)
+			return true;
+		
+		//null check
+		if(o == null)
+			return false;
+		
+		//type check and cast
+		if(!(o instanceof Student))
+			return false;
+		
+		Student s = (Student) o;
+		
+		return Objects.equals(fName, s.fName) && Objects.equals(lName, s.lName)&& Objects.equals(studentID, s.studentID);
 		
 	}
 	
